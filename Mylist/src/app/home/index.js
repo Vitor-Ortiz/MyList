@@ -9,6 +9,7 @@ import {
   } from 'react-native'
 import {Ionicons} from "@expo/vector-icons";
 import { styles } from './style';
+import ItemList from '../../components/itemList';
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
         resizeMode='repeat'
         style={{flex:1 , justifyContent: 'flex-start'}}>
 
-          <View style={StyleSheet.header}>
+          <View style={styles.header}>
             <Text style={styles.title}> Lista de Produtos</Text>
             <View>
               <Ionicons name="trash" size={32} color="#fff"/>
@@ -28,11 +29,18 @@ export default function Home() {
 
           {/* {lista de produtos} */}
 
-          <View style={StyleSheet.footer}>
+          <ItemList item={"Cafe"}></ItemList>
+          <ItemList item={"Chocolate"}></ItemList>
+          <View style={styles.footer}>
             <View style={styles.inputContainer}>
-            <TextInput/>
+            <TextInput
+              color="#fff"
+              fontSize={18}
+              placeholderTextColor="#aeaeae"
+              placeholder="Digite o nome do produto..."
+            />
             </View>
-            <TouchableOpacity style={styles.inputContainer}>
+            <TouchableOpacity style={styles.iconContainer}>
               <Ionicons name="add" size={36} color="#fff"/>
             </TouchableOpacity>
           </View>
